@@ -1,19 +1,16 @@
 #include <stdio.h>
 
+#define LOWER 0
+#define UPPER 300
+#define STEP 20
+
 int main() {
 	int fahr, celsius;
-	int lower, upper, step;
 
-	lower = 0;
-	upper = 300;
-	step = 20;
-
-	fahr = lower;
-	while (fahr <= upper) {
+	fahr = LOWER;
+	for (fahr = LOWER; fahr <= UPPER; fahr+=STEP) {
 		celsius = 5 * (fahr - 32) / 9;
-		printf("Farenheight: %d\n", fahr);
-		printf("Celsius: %d\n", celsius);
-		fahr += 20;
+		printf("Farenheight: %d\tCelsius: %d\n", fahr, celsius);
 	}
 	return 0;
 }
