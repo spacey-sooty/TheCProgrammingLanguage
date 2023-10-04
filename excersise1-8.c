@@ -1,16 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
+	int blanks, tabs, newlines;
 	int c;
-	int count;
 
-	while ((c = getchar()) != EOF) {
-		if (c == 20 || c == 9 || c == 11 || c == 10) {
-			count++;
+	blanks = 0;
+	tabs = 0;
+	newlines = 0;
+
+	while((c = getchar()) != EOF) {
+
+		if(c == ' ') {
+			blanks++;
 		}
-		printf("%d\n", count);
+
+		if(c == '\t') {
+			tabs++;
+		}
+
+		if(c == '\n') {
+			newlines++;
+		}
+
 	}
+
+	printf("Blanks: %d\nTabs: %d\nLines: %d\n", blanks, tabs, newlines);
 	return 0;
 }
 
